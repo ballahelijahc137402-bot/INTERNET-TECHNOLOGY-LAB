@@ -1,0 +1,392 @@
+<!-- 
+   Create an ordered list of stream and name of subjects. When user 
+    clicks on stream, it should open stream and when user clicks on subject name, 
+    it must display details of subject.
+-->
+
+<!doctype html>
+<html>
+  <head>
+    <title>Stream and Subjects</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: white;
+        background-color: darkblue;
+        padding: 15px;
+      }
+
+      /* Main ordered list */
+      ol.stream-list {
+        font-size: 18px;
+        width: 60%;
+        margin: 20px auto;
+      }
+
+      /* Stream link styling */
+      .stream-link {
+        color: darkblue;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .stream-link:hover {
+        color: red;
+      }
+
+      /* Nested subject list - hidden by default */
+      ol.subject-list {
+        display: none;
+        background-color: #e8f0ff;
+        border-left: 4px solid darkblue;
+        padding: 10px 30px;
+        margin: 5px 0;
+      }
+
+      /* Subject link styling */
+      .subject-link {
+        color: darkgreen;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .subject-link:hover {
+        color: red;
+        text-decoration: underline;
+      }
+
+      /* Subject detail box - hidden by default */
+      .subject-detail {
+        display: none;
+        background-color: white;
+        border: 2px solid darkgreen;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px 0;
+        width: 80%;
+      }
+
+      .subject-detail h3 {
+        color: darkblue;
+        margin: 0 0 8px 0;
+      }
+
+      .subject-detail p {
+        color: #333;
+        font-size: 14px;
+        margin: 4px 0;
+      }
+
+      /* Close button */
+      .close-btn {
+        background-color: darkblue;
+        color: white;
+        border: none;
+        padding: 5px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 8px;
+      }
+
+      .close-btn:hover {
+        background-color: red;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: darkblue;
+        color: white;
+        margin-top: 30px;
+      }
+    </style>
+
+    <script>
+      /* Toggle stream open/close */
+      function toggleStream(id) {
+        var list = document.getElementById(id);
+        if (list.style.display === "none" || list.style.display === "") {
+          list.style.display = "block";
+        } else {
+          list.style.display = "none";
+          /* Hide all subject details inside when stream closes */
+          var details = list.querySelectorAll(".subject-detail");
+          for (var i = 0; i < details.length; i++) {
+            details[i].style.display = "none";
+          }
+        }
+      }
+
+      /* Show subject detail on click */
+      function showDetail(id) {
+        /* Hide all details first */
+        var all = document.querySelectorAll(".subject-detail");
+        for (var i = 0; i < all.length; i++) {
+          all[i].style.display = "none";
+        }
+        /* Show clicked subject detail */
+        document.getElementById(id).style.display = "block";
+      }
+
+      /* Close subject detail */
+      function closeDetail(id) {
+        document.getElementById(id).style.display = "none";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>📚 Stream and Subject Directory</h1>
+
+    <ol class="stream-list">
+      <!-- ======= STREAM 1: SCIENCE ======= -->
+      <li>
+        <!-- Click stream name to open/close subjects -->
+        <a class="stream-link" onclick="toggleStream('science-list')">
+          🔬 Science Stream
+        </a>
+
+        <!-- Nested subject list -->
+        <ol class="subject-list" id="science-list">
+          <!-- Subject 1 -->
+          <li>
+            <a class="subject-link" onclick="showDetail('physics')">
+              Physics
+            </a>
+            <div class="subject-detail" id="physics">
+              <h3>📘 Physics</h3>
+              <p><b>Stream:</b> Science</p>
+              <p>
+                <b>Description:</b> Physics is the study of matter, energy, and
+                the interaction between them.
+              </p>
+              <p>
+                <b>Topics:</b> Mechanics, Optics, Thermodynamics, Electricity,
+                Magnetism
+              </p>
+              <p><b>Credits:</b> 4</p>
+              <button class="close-btn" onclick="closeDetail('physics')">
+                Close
+              </button>
+            </div>
+          </li>
+
+          <!-- Subject 2 -->
+          <li>
+            <a class="subject-link" onclick="showDetail('chemistry')">
+              Chemistry
+            </a>
+            <div class="subject-detail" id="chemistry">
+              <h3>📗 Chemistry</h3>
+              <p><b>Stream:</b> Science</p>
+              <p>
+                <b>Description:</b> Chemistry is the study of substances, their
+                properties, structure, and the changes they undergo.
+              </p>
+              <p>
+                <b>Topics:</b> Organic, Inorganic, Physical Chemistry, Periodic
+                Table, Chemical Bonding
+              </p>
+              <p><b>Credits:</b> 4</p>
+              <button class="close-btn" onclick="closeDetail('chemistry')">
+                Close
+              </button>
+            </div>
+          </li>
+
+          <!-- Subject 3 -->
+          <li>
+            <a class="subject-link" onclick="showDetail('biology')">
+              Biology
+            </a>
+            <div class="subject-detail" id="biology">
+              <h3>📕 Biology</h3>
+              <p><b>Stream:</b> Science</p>
+              <p>
+                <b>Description:</b> Biology is the science of life and living
+                organisms including their structure, function, growth and
+                evolution.
+              </p>
+              <p>
+                <b>Topics:</b> Cell Biology, Genetics, Ecology, Human Anatomy,
+                Evolution
+              </p>
+              <p><b>Credits:</b> 4</p>
+              <button class="close-btn" onclick="closeDetail('biology')">
+                Close
+              </button>
+            </div>
+          </li>
+        </ol>
+      </li>
+
+      <!-- ======= STREAM 2: COMMERCE ======= -->
+      <li>
+        <a class="stream-link" onclick="toggleStream('commerce-list')">
+          💼 Commerce Stream
+        </a>
+
+        <ol class="subject-list" id="commerce-list">
+          <!-- Subject 1 -->
+          <li>
+            <a class="subject-link" onclick="showDetail('accounts')">
+              Accountancy
+            </a>
+            <div class="subject-detail" id="accounts">
+              <h3>📘 Accountancy</h3>
+              <p><b>Stream:</b> Commerce</p>
+              <p>
+                <b>Description:</b> Accountancy deals with the process of
+                recording, classifying and summarizing financial transactions.
+              </p>
+              <p>
+                <b>Topics:</b> Journal, Ledger, Balance Sheet, Trial Balance,
+                Cash Flow
+              </p>
+              <p><b>Credits:</b> 4</p>
+              <button class="close-btn" onclick="closeDetail('accounts')">
+                Close
+              </button>
+            </div>
+          </li>
+
+          <!-- Subject 2 -->
+          <li>
+            <a class="subject-link" onclick="showDetail('economics')">
+              Economics
+            </a>
+            <div class="subject-detail" id="economics">
+              <h3>📗 Economics</h3>
+              <p><b>Stream:</b> Commerce</p>
+              <p>
+                <b>Description:</b> Economics is the study of how individuals
+                and societies allocate scarce resources to satisfy unlimited
+                wants.
+              </p>
+              <p>
+                <b>Topics:</b> Micro Economics, Macro Economics, Supply &
+                Demand, GDP, Inflation
+              </p>
+              <p><b>Credits:</b> 4</p>
+              <button class="close-btn" onclick="closeDetail('economics')">
+                Close
+              </button>
+            </div>
+          </li>
+
+          <!-- Subject 3 -->
+          <li>
+            <a class="subject-link" onclick="showDetail('bst')">
+              Business Studies
+            </a>
+            <div class="subject-detail" id="bst">
+              <h3>📕 Business Studies</h3>
+              <p><b>Stream:</b> Commerce</p>
+              <p>
+                <b>Description:</b> Business Studies covers the principles of
+                business, management, marketing and finance.
+              </p>
+              <p>
+                <b>Topics:</b> Management, Marketing, Finance, Business
+                Environment, Entrepreneurship
+              </p>
+              <p><b>Credits:</b> 4</p>
+              <button class="close-btn" onclick="closeDetail('bst')">
+                Close
+              </button>
+            </div>
+          </li>
+        </ol>
+      </li>
+
+      <!-- ======= STREAM 3: ARTS ======= -->
+      <li>
+        <a class="stream-link" onclick="toggleStream('arts-list')">
+          🎨 Arts Stream
+        </a>
+
+        <ol class="subject-list" id="arts-list">
+          <!-- Subject 1 -->
+          <li>
+            <a class="subject-link" onclick="showDetail('history')">
+              History
+            </a>
+            <div class="subject-detail" id="history">
+              <h3>📘 History</h3>
+              <p><b>Stream:</b> Arts</p>
+              <p>
+                <b>Description:</b> History is the study of past events,
+                civilizations, cultures and their impact on the present world.
+              </p>
+              <p>
+                <b>Topics:</b> Ancient History, Medieval History, Modern
+                History, World Wars, Independence
+              </p>
+              <p><b>Credits:</b> 4</p>
+              <button class="close-btn" onclick="closeDetail('history')">
+                Close
+              </button>
+            </div>
+          </li>
+
+          <!-- Subject 2 -->
+          <li>
+            <a class="subject-link" onclick="showDetail('geography')">
+              Geography
+            </a>
+            <div class="subject-detail" id="geography">
+              <h3>📗 Geography</h3>
+              <p><b>Stream:</b> Arts</p>
+              <p>
+                <b>Description:</b> Geography is the study of places,
+                landscapes, environments and the relationships between people
+                and their environments.
+              </p>
+              <p>
+                <b>Topics:</b> Physical Geography, Human Geography, Maps,
+                Climate, Natural Resources
+              </p>
+              <p><b>Credits:</b> 4</p>
+              <button class="close-btn" onclick="closeDetail('geography')">
+                Close
+              </button>
+            </div>
+          </li>
+
+          <!-- Subject 3 -->
+          <li>
+            <a class="subject-link" onclick="showDetail('polsci')">
+              Political Science
+            </a>
+            <div class="subject-detail" id="polsci">
+              <h3>📕 Political Science</h3>
+              <p><b>Stream:</b> Arts</p>
+              <p>
+                <b>Description:</b> Political Science is the study of government
+                systems, political behavior, and political theory.
+              </p>
+              <p>
+                <b>Topics:</b> Indian Constitution, Democracy, International
+                Relations, Political Parties, Rights
+              </p>
+              <p><b>Credits:</b> 4</p>
+              <button class="close-btn" onclick="closeDetail('polsci')">
+                Close
+              </button>
+            </div>
+          </li>
+        </ol>
+      </li>
+    </ol>
+
+    <footer>&copy; 2024 Stream Directory. All Rights Reserved.</footer>
+  </body>
+</html>

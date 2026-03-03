@@ -1,0 +1,163 @@
+<!-- 
+   Write the HTML to make it possible for someone clicking the words
+    'About the authors' at the top of the page to skip down to a list of credits
+    at bottom of the page.
+-->
+
+<!doctype html>
+<html>
+  <head>
+    <title>About the Authors</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: darkblue;
+      }
+
+      /* Style for the top link */
+      .top-link {
+        text-align: center;
+        font-size: 20px;
+        margin: 10px;
+      }
+
+      a {
+        color: darkgreen;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      a:hover {
+        color: red;
+      }
+
+      /* Middle content area */
+      .content {
+        background-color: white;
+        padding: 20px;
+        margin: 20px auto;
+        width: 70%;
+        border: 1px solid #ddd;
+        box-shadow: 2px 2px 8px gray;
+        line-height: 1.8;
+      }
+
+      /* Credits section at bottom */
+      .credits {
+        background-color: darkblue;
+        color: white;
+        padding: 30px;
+        margin: 20px auto;
+        width: 70%;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .credits h2 {
+        color: yellow;
+        border-bottom: 2px solid yellow;
+        padding-bottom: 10px;
+      }
+
+      .credits p {
+        font-size: 16px;
+        margin: 8px 0;
+      }
+
+      /* Back to top link */
+      .back-top {
+        text-align: center;
+        margin: 20px;
+        font-size: 16px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: darkblue;
+        color: white;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ======= TOP OF PAGE ======= -->
+    <h1>Welcome to Our Website</h1>
+
+    <!-- Clicking this will jump down to credits section -->
+    <div class="top-link">
+      <a href="#credits">About the Authors</a>
+    </div>
+
+    <!-- ======= MIDDLE CONTENT ======= -->
+    <div class="content">
+      <h2>Introduction</h2>
+      <p>
+        Welcome to our webpage. This page contains detailed information about
+        our work, research, and the team behind this project. Scroll down or
+        click "About the Authors" at the top to learn more about the people who
+        created this content.
+      </p>
+
+      <h2>Chapter 1 - Overview</h2>
+      <p>
+        This chapter provides an overview of the topic. Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris.
+      </p>
+
+      <h2>Chapter 2 - Details</h2>
+      <p>
+        This chapter dives deeper into the subject matter. Duis aute irure dolor
+        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident.
+      </p>
+
+      <h2>Chapter 3 - Conclusion</h2>
+      <p>
+        This is the concluding chapter of our work. We hope this content has
+        been informative and helpful to our readers. Thank you for visiting our
+        page.
+      </p>
+    </div>
+
+    <!-- ======= CREDITS SECTION AT BOTTOM ======= -->
+    <!-- id="credits" is the anchor target for the top link -->
+    <div class="credits" id="credits">
+      <h2>📝 About the Authors</h2>
+
+      <p>✍️ <b>Author 1:</b> John Smith</p>
+      <p>📧 Email: john@website.com</p>
+      <p>🏢 Role: Lead Writer & Researcher</p>
+      <br />
+
+      <p>✍️ <b>Author 2:</b> Sarah Johnson</p>
+      <p>📧 Email: sarah@website.com</p>
+      <p>🏢 Role: Content Editor & Designer</p>
+      <br />
+
+      <p>✍️ <b>Author 3:</b> Mike Brown</p>
+      <p>📧 Email: mike@website.com</p>
+      <p>🏢 Role: Web Developer & Publisher</p>
+      <br />
+
+      <p>📅 Published: January 2024</p>
+      <p>© 2024 All Rights Reserved</p>
+    </div>
+
+    <!-- Back to Top Link -->
+    <div class="back-top">
+      <a href="#top">⬆ Back to Top</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>&copy; 2024 Our Website. All Rights Reserved.</footer>
+  </body>
+</html>

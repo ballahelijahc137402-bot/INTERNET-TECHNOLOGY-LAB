@@ -1,0 +1,184 @@
+<!-- 
+    Suppose your company has three employees and you want to create a
+    company "directory page" listing some information about each of them.
+-->
+
+<!doctype html>
+<html>
+  <head>
+    <title>Company Directory</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      h1 {
+        text-align: center;
+        color: white;
+        background-color: darkblue;
+        padding: 15px;
+      }
+
+      h2 {
+        text-align: center;
+        color: darkblue;
+      }
+
+      /* Table Styling */
+      table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 2px 2px 10px gray;
+      }
+
+      th {
+        background-color: darkblue;
+        color: white;
+        padding: 12px;
+        text-align: left;
+      }
+
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      tr:hover {
+        background-color: #e0eaff;
+      }
+
+      /* Employee Card Styling */
+      .card {
+        width: 25%;
+        display: inline-block;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 2px 2px 8px gray;
+        vertical-align: top;
+      }
+
+      .card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 3px solid darkblue;
+      }
+
+      .card h3 {
+        color: darkblue;
+        margin: 10px 0 5px;
+      }
+
+      .card p {
+        font-size: 14px;
+        color: #555;
+        margin: 4px 0;
+      }
+
+      .cards-section {
+        text-align: center;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: darkblue;
+        color: white;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Company Header -->
+    <h1>🏢 ABC Company - Employee Directory</h1>
+
+    <!-- ======= EMPLOYEE CARDS ======= -->
+    <h2>Our Team</h2>
+    <div class="cards-section">
+      <!-- Employee 1 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/80" alt="Employee 1" />
+        <h3>John Smith</h3>
+        <p><b>Position:</b> Manager</p>
+        <p><b>Department:</b> HR</p>
+        <p><b>Email:</b> john@abc.com</p>
+        <p><b>Phone:</b> 123-456-7890</p>
+        <p><b>Location:</b> New York</p>
+      </div>
+
+      <!-- Employee 2 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/80" alt="Employee 2" />
+        <h3>Sarah Johnson</h3>
+        <p><b>Position:</b> Developer</p>
+        <p><b>Department:</b> IT</p>
+        <p><b>Email:</b> sarah@abc.com</p>
+        <p><b>Phone:</b> 987-654-3210</p>
+        <p><b>Location:</b> California</p>
+      </div>
+
+      <!-- Employee 3 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/80" alt="Employee 3" />
+        <h3>Mike Brown</h3>
+        <p><b>Position:</b> Designer</p>
+        <p><b>Department:</b> Creative</p>
+        <p><b>Email:</b> mike@abc.com</p>
+        <p><b>Phone:</b> 456-789-0123</p>
+        <p><b>Location:</b> Texas</p>
+      </div>
+    </div>
+
+    <!-- ======= EMPLOYEE TABLE ======= -->
+    <h2>Employee Details</h2>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Department</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Location</th>
+      </tr>
+      <tr>
+        <td>001</td>
+        <td>John Smith</td>
+        <td>Manager</td>
+        <td>HR</td>
+        <td>john@abc.com</td>
+        <td>123-456-7890</td>
+        <td>New York</td>
+      </tr>
+      <tr>
+        <td>002</td>
+        <td>Sarah Johnson</td>
+        <td>Developer</td>
+        <td>IT</td>
+        <td>sarah@abc.com</td>
+        <td>987-654-3210</td>
+        <td>California</td>
+      </tr>
+      <tr>
+        <td>003</td>
+        <td>Mike Brown</td>
+        <td>Designer</td>
+        <td>Creative</td>
+        <td>mike@abc.com</td>
+        <td>456-789-0123</td>
+        <td>Texas</td>
+      </tr>
+    </table>
+
+    <!-- Footer -->
+    <footer>&copy; 2024 ABC Company. All Rights Reserved.</footer>
+  </body>
+</html>

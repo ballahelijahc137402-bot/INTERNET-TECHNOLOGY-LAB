@@ -1,0 +1,127 @@
+<!-- 
+     Create a web page showing an ordered list of names of the subjects,
+    with nested list. If any subject has been selected it should display the
+    content of each subject.
+-->
+
+<!doctype html>
+<html>
+  <head>
+    <title>Subject List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      h1 {
+        text-align: center;
+        color: darkblue;
+      }
+
+      ol {
+        font-size: 18px;
+      }
+
+      /* Style for subject links */
+      a {
+        text-decoration: none;
+        color: darkgreen;
+      }
+
+      a:hover {
+        color: red;
+      }
+
+      /* Content box that shows on click */
+      .content {
+        display: none;
+        background-color: #fff;
+        border: 1px solid green;
+        padding: 10px;
+        margin: 5px 0;
+        width: 400px;
+      }
+    </style>
+
+    <script>
+      /* Function to show/hide subject content on click */
+      function showContent(id) {
+        var all = document.querySelectorAll(".content");
+        for (var i = 0; i < all.length; i++) {
+          all[i].style.display = "none"; // hide all first
+        }
+        var box = document.getElementById(id);
+        if (box.style.display === "none") {
+          box.style.display = "block"; // show selected
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>My Subjects</h1>
+
+    <!-- Ordered list of subjects with nested lists -->
+    <ol>
+      <!-- Subject 1 -->
+      <li>
+        <a href="#" onclick="showContent('math')">Mathematics</a>
+        <ol>
+          <li>Algebra</li>
+          <li>Geometry</li>
+          <li>Calculus</li>
+        </ol>
+        <!-- Content shown on click -->
+        <div class="content" id="math">
+          <b>Mathematics:</b> Mathematics is the study of numbers, shapes, and
+          patterns. It includes Algebra, Geometry, and Calculus as core topics.
+        </div>
+      </li>
+
+      <!-- Subject 2 -->
+      <li>
+        <a href="#" onclick="showContent('science')">Science</a>
+        <ol>
+          <li>Physics</li>
+          <li>Chemistry</li>
+          <li>Biology</li>
+        </ol>
+        <div class="content" id="science">
+          <b>Science:</b> Science is the study of the natural world. It includes
+          Physics (forces & energy), Chemistry (matter), and Biology (living
+          organisms).
+        </div>
+      </li>
+
+      <!-- Subject 3 -->
+      <li>
+        <a href="#" onclick="showContent('computer')">Computer Science</a>
+        <ol>
+          <li>Programming</li>
+          <li>Networking</li>
+          <li>Database</li>
+        </ol>
+        <div class="content" id="computer">
+          <b>Computer Science:</b> It covers Programming, Networking, and
+          Database Management. It is the foundation of modern technology and
+          software development.
+        </div>
+      </li>
+
+      <!-- Subject 4 -->
+      <li>
+        <a href="#" onclick="showContent('english')">English</a>
+        <ol>
+          <li>Grammar</li>
+          <li>Literature</li>
+          <li>Writing Skills</li>
+        </ol>
+        <div class="content" id="english">
+          <b>English:</b> English subject covers Grammar rules, Literature
+          (poems, novels), and Writing Skills to improve communication and
+          expression.
+        </div>
+      </li>
+    </ol>
+  </body>
+</html>

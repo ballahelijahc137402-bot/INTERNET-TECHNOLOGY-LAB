@@ -1,0 +1,259 @@
+<!-- 
+    Write the HTML for that page and link 1 employee 
+    to another employee.
+-->
+
+<!doctype html>
+<html>
+  <head>
+    <title>Company Directory</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      h1 {
+        text-align: center;
+        color: white;
+        background-color: darkblue;
+        padding: 15px;
+      }
+
+      h2 {
+        text-align: center;
+        color: darkblue;
+      }
+
+      /* Card Styling */
+      .card {
+        width: 25%;
+        display: inline-block;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 2px 2px 8px gray;
+        vertical-align: top;
+      }
+
+      .card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 3px solid darkblue;
+      }
+
+      .card h3 {
+        color: darkblue;
+      }
+
+      .card p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      .cards-section {
+        text-align: center;
+      }
+
+      /* Link Styling */
+      a {
+        color: darkgreen;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        color: red;
+        text-decoration: underline;
+      }
+
+      /* Profile Page Styling */
+      .profile {
+        display: none;
+        width: 50%;
+        margin: 20px auto;
+        background-color: white;
+        border: 2px solid darkblue;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 2px 2px 10px gray;
+      }
+
+      .profile img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 4px solid darkblue;
+      }
+
+      .profile h2 {
+        color: darkblue;
+      }
+
+      .profile p {
+        font-size: 16px;
+        color: #333;
+      }
+
+      .close-btn {
+        background-color: darkblue;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .close-btn:hover {
+        background-color: red;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: darkblue;
+        color: white;
+        margin-top: 30px;
+      }
+    </style>
+
+    <script>
+      /* Function to show employee profile on click */
+      function showProfile(id) {
+        /* Hide all profiles first */
+        var all = document.querySelectorAll(".profile");
+        for (var i = 0; i < all.length; i++) {
+          all[i].style.display = "none";
+        }
+        /* Show selected profile */
+        document.getElementById(id).style.display = "block";
+
+        /* Scroll down to profile */
+        document.getElementById(id).scrollIntoView();
+      }
+
+      /* Function to close profile */
+      function closeProfile(id) {
+        document.getElementById(id).style.display = "none";
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Company Header -->
+    <h1>🏢 ABC Company - Employee Directory</h1>
+
+    <!-- ======= EMPLOYEE CARDS ======= -->
+    <h2>Our Team</h2>
+    <div class="cards-section">
+      <!-- Employee 1 - John linked to Sarah -->
+      <div class="card">
+        <img src="https://via.placeholder.com/80" alt="John Smith" />
+        <h3>John Smith</h3>
+        <p><b>Position:</b> Manager</p>
+        <p><b>Department:</b> HR</p>
+        <p><b>Email:</b> john@abc.com</p>
+        <p><b>Phone:</b> 123-456-7890</p>
+        <!-- Link to Employee 2 (Sarah) -->
+        <p>
+          Works with:
+          <a href="#" onclick="showProfile('sarah-profile')"> Sarah Johnson </a>
+        </p>
+      </div>
+
+      <!-- Employee 2 - Sarah linked to Mike -->
+      <div class="card">
+        <img src="https://via.placeholder.com/80" alt="Sarah Johnson" />
+        <h3>Sarah Johnson</h3>
+        <p><b>Position:</b> Developer</p>
+        <p><b>Department:</b> IT</p>
+        <p><b>Email:</b> sarah@abc.com</p>
+        <p><b>Phone:</b> 987-654-3210</p>
+        <!-- Link to Employee 3 (Mike) -->
+        <p>
+          Works with:
+          <a href="#" onclick="showProfile('mike-profile')"> Mike Brown </a>
+        </p>
+      </div>
+
+      <!-- Employee 3 - Mike linked back to John -->
+      <div class="card">
+        <img src="https://via.placeholder.com/80" alt="Mike Brown" />
+        <h3>Mike Brown</h3>
+        <p><b>Position:</b> Designer</p>
+        <p><b>Department:</b> Creative</p>
+        <p><b>Email:</b> mike@abc.com</p>
+        <p><b>Phone:</b> 456-789-0123</p>
+        <!-- Link back to Employee 1 (John) -->
+        <p>
+          Reports to:
+          <a href="#" onclick="showProfile('john-profile')"> John Smith </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- ======= PROFILE PAGES (Hidden until clicked) ======= -->
+
+    <!-- John's Profile Page -->
+    <div class="profile" id="john-profile">
+      <img src="https://via.placeholder.com/100" alt="John Smith" />
+      <h2>John Smith</h2>
+      <p><b>Position:</b> Manager</p>
+      <p><b>Department:</b> HR</p>
+      <p><b>Email:</b> john@abc.com</p>
+      <p><b>Phone:</b> 123-456-7890</p>
+      <p><b>Location:</b> New York</p>
+      <p>
+        <b>About:</b> John is the HR Manager with 10 years of experience
+        managing teams and company operations.
+      </p>
+      <button class="close-btn" onclick="closeProfile('john-profile')">
+        Close
+      </button>
+    </div>
+
+    <!-- Sarah's Profile Page -->
+    <div class="profile" id="sarah-profile">
+      <img src="https://via.placeholder.com/100" alt="Sarah Johnson" />
+      <h2>Sarah Johnson</h2>
+      <p><b>Position:</b> Developer</p>
+      <p><b>Department:</b> IT</p>
+      <p><b>Email:</b> sarah@abc.com</p>
+      <p><b>Phone:</b> 987-654-3210</p>
+      <p><b>Location:</b> California</p>
+      <p>
+        <b>About:</b> Sarah is a Full Stack Developer with expertise in HTML,
+        CSS, JavaScript and Python.
+      </p>
+      <button class="close-btn" onclick="closeProfile('sarah-profile')">
+        Close
+      </button>
+    </div>
+
+    <!-- Mike's Profile Page -->
+    <div class="profile" id="mike-profile">
+      <img src="https://via.placeholder.com/100" alt="Mike Brown" />
+      <h2>Mike Brown</h2>
+      <p><b>Position:</b> Designer</p>
+      <p><b>Department:</b> Creative</p>
+      <p><b>Email:</b> mike@abc.com</p>
+      <p><b>Phone:</b> 456-789-0123</p>
+      <p><b>Location:</b> Texas</p>
+      <p>
+        <b>About:</b> Mike is a Creative Designer specialized in UI/UX design
+        and graphic design for web and mobile.
+      </p>
+      <button class="close-btn" onclick="closeProfile('mike-profile')">
+        Close
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>&copy; 2024 ABC Company. All Rights Reserved.</footer>
+  </body>
+</html>

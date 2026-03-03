@@ -1,0 +1,286 @@
+<!-- 
+   Create unordered list of menu of restaurant.
+-->
+
+<!doctype html>
+<html>
+  <head>
+    <title>Restaurant Menu</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fff8f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Header */
+      .header {
+        background-color: darkred;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 36px;
+      }
+
+      .header p {
+        margin: 5px 0 0;
+        font-size: 16px;
+        color: #ffd700;
+      }
+
+      /* Section Title */
+      h2 {
+        color: darkred;
+        text-align: center;
+        border-bottom: 2px solid darkred;
+        width: 60%;
+        margin: 20px auto 10px;
+        padding-bottom: 5px;
+      }
+
+      /* Unordered list styling */
+      ul.menu {
+        list-style-type: none;
+        width: 60%;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      ul.menu li {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 1px 1px 5px #ddd;
+      }
+
+      ul.menu li:hover {
+        background-color: #fff0e0;
+        border-color: darkred;
+      }
+
+      /* Item name */
+      .item-name {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      /* Item description */
+      .item-desc {
+        font-size: 13px;
+        color: #777;
+        margin-top: 3px;
+      }
+
+      /* Item price */
+      .item-price {
+        font-size: 16px;
+        font-weight: bold;
+        color: darkred;
+      }
+
+      /* Veg / Non-veg badge */
+      .veg {
+        color: green;
+        font-size: 18px;
+        margin-right: 8px;
+      }
+
+      .nonveg {
+        color: darkred;
+        font-size: 18px;
+        margin-right: 8px;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: darkred;
+        color: white;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Restaurant Header -->
+    <div class="header">
+      <h1>🍽️ The Grand Restaurant</h1>
+      <p>Fine Dining | Fresh Food | Great Experience</p>
+    </div>
+
+    <!-- ======= STARTERS ======= -->
+    <h2>🥗 Starters</h2>
+    <ul class="menu">
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Veg Spring Rolls</span>
+          <div class="item-desc">
+            Crispy rolls stuffed with fresh vegetables
+          </div>
+        </div>
+        <span class="item-price">₹120</span>
+      </li>
+      <li>
+        <div>
+          <span class="nonveg">🔴</span>
+          <span class="item-name">Chicken Tikka</span>
+          <div class="item-desc">Grilled chicken marinated in spices</div>
+        </div>
+        <span class="item-price">₹220</span>
+      </li>
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Paneer Tikka</span>
+          <div class="item-desc">Grilled cottage cheese with mint chutney</div>
+        </div>
+        <span class="item-price">₹180</span>
+      </li>
+    </ul>
+
+    <!-- ======= MAIN COURSE ======= -->
+    <h2>🍛 Main Course</h2>
+    <ul class="menu">
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Dal Makhani</span>
+          <div class="item-desc">Creamy black lentils cooked overnight</div>
+        </div>
+        <span class="item-price">₹160</span>
+      </li>
+      <li>
+        <div>
+          <span class="nonveg">🔴</span>
+          <span class="item-name">Butter Chicken</span>
+          <div class="item-desc">
+            Tender chicken in rich buttery tomato gravy
+          </div>
+        </div>
+        <span class="item-price">₹280</span>
+      </li>
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Veg Biryani</span>
+          <div class="item-desc">
+            Aromatic basmati rice with mixed vegetables
+          </div>
+        </div>
+        <span class="item-price">₹200</span>
+      </li>
+      <li>
+        <div>
+          <span class="nonveg">🔴</span>
+          <span class="item-name">Mutton Rogan Josh</span>
+          <div class="item-desc">Slow cooked mutton in Kashmiri spices</div>
+        </div>
+        <span class="item-price">₹350</span>
+      </li>
+    </ul>
+
+    <!-- ======= BREADS ======= -->
+    <h2>🫓 Breads</h2>
+    <ul class="menu">
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Butter Naan</span>
+          <div class="item-desc">Soft leavened bread with butter</div>
+        </div>
+        <span class="item-price">₹40</span>
+      </li>
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Garlic Roti</span>
+          <div class="item-desc">Whole wheat bread with garlic flavor</div>
+        </div>
+        <span class="item-price">₹35</span>
+      </li>
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Tandoori Paratha</span>
+          <div class="item-desc">Layered bread baked in tandoor oven</div>
+        </div>
+        <span class="item-price">₹50</span>
+      </li>
+    </ul>
+
+    <!-- ======= DESSERTS ======= -->
+    <h2>🍮 Desserts</h2>
+    <ul class="menu">
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Gulab Jamun</span>
+          <div class="item-desc">Soft milk dumplings in sugar syrup</div>
+        </div>
+        <span class="item-price">₹80</span>
+      </li>
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Mango Kulfi</span>
+          <div class="item-desc">Traditional Indian ice cream with mango</div>
+        </div>
+        <span class="item-price">₹90</span>
+      </li>
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Rasgulla</span>
+          <div class="item-desc">Soft cottage cheese balls in sugar syrup</div>
+        </div>
+        <span class="item-price">₹70</span>
+      </li>
+    </ul>
+
+    <!-- ======= DRINKS ======= -->
+    <h2>🥤 Drinks</h2>
+    <ul class="menu">
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Mango Lassi</span>
+          <div class="item-desc">Sweet yogurt drink blended with mango</div>
+        </div>
+        <span class="item-price">₹80</span>
+      </li>
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Masala Chai</span>
+          <div class="item-desc">Spiced Indian tea with milk</div>
+        </div>
+        <span class="item-price">₹40</span>
+      </li>
+      <li>
+        <div>
+          <span class="veg">🟢</span>
+          <span class="item-name">Fresh Lime Soda</span>
+          <div class="item-desc">Refreshing lime juice with soda water</div>
+        </div>
+        <span class="item-price">₹60</span>
+      </li>
+    </ul>
+
+    <!-- Footer -->
+    <footer>
+      🍽️ Thank you for dining with us! | &copy; 2024 The Grand Restaurant
+    </footer>
+  </body>
+</html>
